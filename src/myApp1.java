@@ -68,6 +68,7 @@ public class myApp1 {
         this.eatArray = eatArray;
         this.broughtArray = broughtArray;
         JFrame frame = new JFrame("HQ Food Database");
+
         frame.setSize(600, 400);
         frame.add(panel1);
         frame.setVisible(true);
@@ -93,12 +94,13 @@ public class myApp1 {
                 int[] marks = new int[10];
                 double[] bmarks = new double[10];
                 double mark = 0;
+                double count = 0;
                 if (Mark1.isSelected()) {
-                    mark = 1;
+                    mark = 2;
                 } else if (Mark75.isSelected()) {
-                    mark = 0.75;
+                    mark = 1;
                 } else if (Mark5.isSelected()) {
-                    mark = 0.5;
+                    mark = 0.75;
                 }
                 if (ke.isSelected()) {
                     // I want to pass this data to outside to update the values in input.txt
@@ -134,38 +136,48 @@ public class myApp1 {
 //following represent brought marks list
 
                 if (kb.isSelected()) {
-                    bmarks[0] = mark;
+                    bmarks[0] = 1;
+                    count++;
                 }
                 if (lb.isSelected()) {
-                    bmarks[1] = mark;
+                    bmarks[1] = 1;
+                    count++;
                 }
                 if (pob.isSelected()) {
-                    bmarks[2] = mark;
+                    bmarks[2] = 1;
+                    count++;
                 }
                 if (jb.isSelected()) {
-                    bmarks[3] = mark;
+                    bmarks[3] = 1;
+                    count++;
                 }
                 if (nb.isSelected()) {
-                    bmarks[4] = mark;
+                    bmarks[4] = 1;
+                    count++;
                 }
                 if (pab.isSelected()) {
-                    bmarks[5] = mark;
+                    bmarks[5] = 1;
+                    count++;
                 }
                 if (sb.isSelected()) {
-                    bmarks[6] = mark;
+                    bmarks[6] = 1;
+                    count++;
                 }
                 if (ab.isSelected()) {
-                    bmarks[7] = mark;
+                    bmarks[7] = 1;
+                    count++;
                 }
                 if (ub.isSelected()) {
-                    bmarks[8] = mark;
+                    bmarks[8] = 1;
+                    count++;
                 }
                 if (wb.isSelected()) {
-                    bmarks[9] = mark;
+                    bmarks[9] = 1;
+                    count++;
                 }
                 System.out.println("hello");
                 try {
-                    final String a = updateValues.updateBroughtVal(bmarks);
+                    final String a = updateValues.updateBroughtVal(bmarks, mark / count);
                     final String b = updateValues.updateEatValues(marks);
                     System.out.println(b);
 
@@ -334,13 +346,13 @@ public class myApp1 {
         foodMarks.setText("Choose the no.of Marks added for the brought meal");
         panel2.add(foodMarks, new com.intellij.uiDesigner.core.GridConstraints(0, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         Mark1 = new JRadioButton();
-        Mark1.setText("1 Mark");
+        Mark1.setText("2 Marks");
         panel2.add(Mark1, new com.intellij.uiDesigner.core.GridConstraints(0, 1, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         Mark75 = new JRadioButton();
-        Mark75.setText("0.75 Marks");
+        Mark75.setText("1 Mark");
         panel2.add(Mark75, new com.intellij.uiDesigner.core.GridConstraints(0, 2, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         Mark5 = new JRadioButton();
-        Mark5.setText("0.5 Marks");
+        Mark5.setText("0.75 Marks");
         panel2.add(Mark5, new com.intellij.uiDesigner.core.GridConstraints(0, 3, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         right = new JPanel();
         right.setLayout(new com.intellij.uiDesigner.core.GridLayoutManager(10, 2, new Insets(0, 0, 0, 0), -1, -1));

@@ -139,18 +139,12 @@ class updateValues{
         newList=Ratios.giveRatios(boardingMates);
         return newList;
     }
-    public static String updateBroughtVal(double [] bmarks )throws IOException{
+    public static String updateBroughtVal(double [] bmarks,double val )throws IOException{
         resident [] boardingMates = CreateResidents.create();
         String newList;
         for (int i=0;i<10;i++){
             if (bmarks[i]==1){
-                boardingMates[i].updateMyBroughtVal(1);
-            }
-            else if(bmarks[i]==0.75){
-                boardingMates[i].updateMyBroughtVal(0.75);
-            }
-            else if(bmarks[i]==0.5){
-                boardingMates[i].updateMyBroughtVal(0.5);
+                boardingMates[i].updateMyBroughtVal(val);
             }
         }
         WriteOutput.writeNewValues(boardingMates);

@@ -5,6 +5,7 @@ public class Controller {
     private int [] eatArray;
     private double [] broughtArray;
     private static String ratiostr = "";
+
     public static void main(String[] args) throws IOException {
         Controller controller= new Controller();
         resident [] boardingMates=CreateResidents.create();
@@ -16,6 +17,7 @@ public class Controller {
         }
         myApp1 myApp = new myApp1(controller,eatArray,broughtArray);
         myApp.setText(eatArray,broughtArray);
+
         ratiostr = Ratios.giveRatios(boardingMates);
     }
 
