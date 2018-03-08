@@ -1,0 +1,1 @@
+kalana,8,6.0,laika,11,7.0,pola,8,2.0,jaka,8,1.0,nima,6,1.0,panje,9,10.0,sharada,8,1.0,akitha,6,1.0,udda,7,2.5,wimuwa,4,1.0,

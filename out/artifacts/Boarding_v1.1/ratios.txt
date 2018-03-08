@@ -1,0 +1,10 @@
+sharada,0.14285715
+jaka,0.16666667
+udda,0.16666667
+nima,0.2
+akitha,0.2
+pola,0.33333334
+wimuwa,0.33333334
+laika,0.75
+kalana,0.8333333
+panje,1.25

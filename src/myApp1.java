@@ -55,6 +55,7 @@ public class myApp1 {
     private JLabel b7;
     private JLabel b8;
     private JLabel b9;
+    private JRadioButton Mark2;
     private JRadioButton Mark1;
     private JRadioButton Mark75;
     private JRadioButton Mark5;
@@ -69,7 +70,7 @@ public class myApp1 {
         this.broughtArray = broughtArray;
         JFrame frame = new JFrame("HQ Food Database");
 
-        frame.setSize(600, 400);
+        frame.setSize(700, 600);
         frame.add(panel1);
         frame.setVisible(true);
         calculateButton.setEnabled(false);
@@ -95,12 +96,14 @@ public class myApp1 {
                 double[] bmarks = new double[10];
                 double mark = 0;
                 double count = 0;
-                if (Mark1.isSelected()) {
+                if (Mark2.isSelected()) {
                     mark = 2;
-                } else if (Mark75.isSelected()) {
+                } else if (Mark1.isSelected()) {
                     mark = 1;
-                } else if (Mark5.isSelected()) {
+                } else if (Mark75.isSelected()) {
                     mark = 0.75;
+                } else if (Mark5.isSelected()) {
+                    mark = 0.5;
                 }
                 if (ke.isSelected()) {
                     // I want to pass this data to outside to update the values in input.txt
@@ -191,7 +194,7 @@ public class myApp1 {
         calculateButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                calculateButton.setEnabled(false);
                 Popup dialog = new Popup(Controller.getRatiostr().split("<br>"));
                 dialog.pack();
                 dialog.setVisible(true);
@@ -340,20 +343,23 @@ public class myApp1 {
         confirmButton.setText("Confirm");
         bottom.add(confirmButton, new com.intellij.uiDesigner.core.GridConstraints(1, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         final JPanel panel2 = new JPanel();
-        panel2.setLayout(new com.intellij.uiDesigner.core.GridLayoutManager(1, 4, new Insets(0, 0, 0, 0), -1, -1));
+        panel2.setLayout(new com.intellij.uiDesigner.core.GridLayoutManager(1, 5, new Insets(0, 0, 0, 0), -1, -1));
         bottom.add(panel2, new com.intellij.uiDesigner.core.GridConstraints(0, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_BOTH, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null, 0, false));
         foodMarks = new JLabel();
         foodMarks.setText("Choose the no.of Marks added for the brought meal");
         panel2.add(foodMarks, new com.intellij.uiDesigner.core.GridConstraints(0, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        Mark2 = new JRadioButton();
+        Mark2.setText("2 Marks");
+        panel2.add(Mark2, new com.intellij.uiDesigner.core.GridConstraints(0, 1, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         Mark1 = new JRadioButton();
-        Mark1.setText("2 Marks");
-        panel2.add(Mark1, new com.intellij.uiDesigner.core.GridConstraints(0, 1, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        Mark1.setText("1 Mark");
+        panel2.add(Mark1, new com.intellij.uiDesigner.core.GridConstraints(0, 2, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         Mark75 = new JRadioButton();
-        Mark75.setText("1 Mark");
-        panel2.add(Mark75, new com.intellij.uiDesigner.core.GridConstraints(0, 2, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        Mark75.setText("0.75 Marks");
+        panel2.add(Mark75, new com.intellij.uiDesigner.core.GridConstraints(0, 3, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         Mark5 = new JRadioButton();
-        Mark5.setText("0.75 Marks");
-        panel2.add(Mark5, new com.intellij.uiDesigner.core.GridConstraints(0, 3, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        Mark5.setText("0.5 Marks");
+        panel2.add(Mark5, new com.intellij.uiDesigner.core.GridConstraints(0, 4, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         right = new JPanel();
         right.setLayout(new com.intellij.uiDesigner.core.GridLayoutManager(10, 2, new Insets(0, 0, 0, 0), -1, -1));
         panel1.add(right, BorderLayout.EAST);
@@ -421,9 +427,9 @@ public class myApp1 {
         panel1.add(spacer1, BorderLayout.CENTER);
         ButtonGroup buttonGroup;
         buttonGroup = new ButtonGroup();
+        buttonGroup.add(Mark2);
         buttonGroup.add(Mark1);
         buttonGroup.add(Mark75);
-        buttonGroup.add(Mark5);
         buttonGroup = new ButtonGroup();
         buttonGroup.add(ke);
         buttonGroup.add(kb);
